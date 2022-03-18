@@ -11,12 +11,12 @@ y = np.ravel(arquivo[1])
 
 
 
-regr = MLPRegressor(hidden_layer_sizes=(150,150,150),
-                    max_iter=5000,
-                    activation='tanh', #{'identity', 'logistic', 'tanh', 'relu'},
+regr = MLPRegressor(hidden_layer_sizes=(800,800,800),
+                    max_iter=20000,
+                    activation='relu', #{'identity', 'logistic', 'tanh', 'relu'},
                     solver='adam',
                     learning_rate = 'adaptive',
-                    n_iter_no_change=500)
+                    n_iter_no_change=1000)
 print('Treinando RNA')
 regr = regr.fit(x,y)
 

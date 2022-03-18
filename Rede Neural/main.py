@@ -3,7 +3,7 @@ import matplotlib.pyplot as plt
 from sklearn.neural_network import MLPRegressor
 
 print('Carregando Arquivo de teste')
-arquivo = np.load('teste4.npy')
+arquivo = np.load('teste5.npy')
 x = arquivo[0]
 y = np.ravel(arquivo[1])
 
@@ -11,12 +11,12 @@ y = np.ravel(arquivo[1])
 
 
 
-regr = MLPRegressor(hidden_layer_sizes=(300,300,300,300),
-                    max_iter=10000,
-                    activation='tanh', #{'identity', 'logistic', 'tanh', 'relu'},
+regr = MLPRegressor(hidden_layer_sizes=(800,800,800),
+                    max_iter=20000,
+                    activation='relu', #{'identity', 'logistic', 'tanh', 'relu'},
                     solver='adam',
                     learning_rate = 'adaptive',
-                    n_iter_no_change=500)
+                    n_iter_no_change=1000)
 print('Treinando RNA')
 regr = regr.fit(x,y)
 
